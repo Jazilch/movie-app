@@ -1,15 +1,20 @@
-import { createStore } from 'redux';
-import rootReducer from './reducers';
+'use es6';
 
-export default function configureStore() {
-  const store = createStore(
-    rootReducer /* preloadedState, */,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../reducers';
+
+const createStoreWithMiddleware = compose(
+  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)(createStore);
+
+if (process.env.NODE_ENV !== 'production' && module.hot) {
+  module.hot.accept('../reducers', () =>
+    createStoreWithMiddleware.replaceReducer(rootReducer)
   );
+}
 
-  if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('./reducers', () => store.replaceReducer(rootReducer));
-  }
-
-  return store;
+export default function configureStore(initialState) {
+  return createStoreWithMiddleware(rootReducer, initialState);
 }

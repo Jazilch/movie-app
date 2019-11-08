@@ -6,7 +6,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './utils/configStore';
 
-const store = configureStore();
+const store = configureStore({});
 
 const renderApp = () =>
   render(

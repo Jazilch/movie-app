@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
-import MovieList from './components/MovieList';
+import MovieListContainer from './containers/MovieListContainer';
 import MovieItem from './components/MovieItem';
 import NotFound from './components/NotFound';
 
@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/" component={MovieList} />
+          <Route exact path="/" component={MovieListContainer} />
           <Route path="/:id" component={MovieItem} />
           <Route component={NotFound} />
         </Switch>
