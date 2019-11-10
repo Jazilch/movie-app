@@ -13,7 +13,9 @@ const HeaderWrapper = styled.div`
 const Logo = styled.div`
   color: red;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 42px;
+  letter-spacing: 1px;
+  font-family: 'Bangers', cursive;
 `;
 
 const Nav = styled.nav`

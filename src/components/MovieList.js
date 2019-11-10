@@ -13,10 +13,17 @@ const MovieListGrid = styled.div`
   grid-row-gap: 10px;
 `;
 
+const LoadingGrid = styled.div`
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
 const override = css`
   display: block;
   margin: 0 auto;
-  border-color: red;
+  text-align: center;
 `;
 
 class MovieList extends Component {
@@ -27,13 +34,15 @@ class MovieList extends Component {
 
   render() {
     const { movies } = this.props;
-    if (!movies.DATA)
+    if (!movies.data)
       return (
-        <ScaleLoader css={override} sizeUnit="px" size={150} color="#123abc" />
+        <LoadingGrid>
+          <ScaleLoader css={override} sizeUnit="px" size={150} color="red" />
+        </LoadingGrid>
       );
     return (
       <MovieListGrid>
-        {movies.DATA.data.results.map(({ id, title, overview }) => {
+        {movies.data.map(({ id, title, overview }) => {
           return <MovieItem key={id} title={title} overview={overview} />;
         })}
       </MovieListGrid>

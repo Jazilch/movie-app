@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './Header';
+import Footer from './Footer';
 
 const LayoutWrapper = styled.section`
   display: grid;
@@ -23,7 +24,7 @@ const Layout = ({ children }) => (
   <LayoutWrapper>
     <Header />
     <main>{children}</main>
-    <footer>Im the footer</footer>
+    <Footer />
   </LayoutWrapper>
 );
 
