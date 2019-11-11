@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Footer from '../../components/Footer';
 
 describe('Footer component', () => {
@@ -13,11 +14,11 @@ describe('Footer component', () => {
     footer = shallow(<Footer />);
   });
 
-  it('displays the correct copyright info', () => {
-    expect(footer.find('p').text()).toEqual('Created with ❤️ by James Zilch');
+  it('renders component correctly', () => {
+    expect(toJson(footer)).toMatchSnapshot();
   });
 
-  it('matches snapshot', () => {
-    expect(footer).toMatchSnapshot();
+  it('displays the correct copyright info', () => {
+    expect(footer.find('p').text()).toEqual('Created with ❤️ by James Zilch');
   });
 });

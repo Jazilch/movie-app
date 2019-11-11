@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "enzyme-to-json": "^3.4.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.5.0",

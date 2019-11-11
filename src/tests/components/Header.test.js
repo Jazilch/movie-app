@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Header from '../../components/Header';
 
 describe('Header component', () => {
@@ -13,7 +14,7 @@ describe('Header component', () => {
     header = shallow(<Header />);
   });
 
-  it('matches snapshot', () => {
-    expect(header).toMatchSnapshot();
+  it('renders header correctly', () => {
+    expect(toJson(header)).toMatchSnapshot();
   });
 });

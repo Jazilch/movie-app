@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import MovieItem from '../../components/MovieItem';
 
 describe('MovieItem component', () => {
@@ -12,16 +13,15 @@ describe('MovieItem component', () => {
   const overview = 'Description of the Joker';
 
   beforeEach(() => {
-    movieitem = shallow(<MovieItem />);
-  });
-  it('renders the correct text', () => {
     movieitem = shallow(<MovieItem title={title} overview={overview} />);
-
-    expect(movieitem.find('h1').text()).toEqual('Joker');
-    expect(movieitem.find('p').text()).toEqual('Description of the Joker');
   });
 
   it('correctly renders movie item', () => {
-    expect(movieitem).toMatchSnapshot();
+    expect(toJson(movieitem)).toMatchSnapshot();
+  });
+
+  it('renders the correct text', () => {
+    expect(movieitem.find('h1').text()).toEqual('Joker');
+    expect(movieitem.find('p').text()).toEqual('Description of the Joker');
   });
 });
