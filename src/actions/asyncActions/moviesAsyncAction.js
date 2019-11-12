@@ -7,7 +7,7 @@ export const getMovies = () => {
     dispatch(getMoviesStart());
 
     return fetchMovies().then(
-      result => dispatch(getMoviesSuccess(result)),
+      result => dispatch(getMoviesSuccess(result.data)),
       error => {
         dispatch(getMoviesError(error));
         return dispatch(getMoviesError());

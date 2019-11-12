@@ -7,5 +7,9 @@ export const getMoviesError = createAction(ActionTypes.GET_MOVIES_ERROR);
 export const getMoviesStart = createAction(ActionTypes.GET_MOVIES_START);
 export const getMoviesSuccess = createAction(
   ActionTypes.GET_MOVIES_SUCCESS,
-  ({ data }) => data
+  result => result
 );
+// export const getMoviesSuccess = createAction(
+//   ActionTypes.GET_MOVIES_SUCCESS,
+//   ({ data }) => data
+// );
