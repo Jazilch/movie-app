@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 'use es6';
 
 import React, { Component } from 'react';
@@ -32,6 +34,11 @@ class MovieList extends Component {
     getMovies();
   }
 
+  showMoviePage = id => () => {
+    const { history } = this.props;
+    history.push(`/movies/${id}`);
+  };
+
   render() {
     const { movies } = this.props;
     if (!movies.data)
@@ -42,8 +49,17 @@ class MovieList extends Component {
       );
     return (
       <MovieListGrid>
-        {movies.data.map(({ id, title, overview }) => {
-          return <MovieItem key={id} title={title} overview={overview} />;
+        {movies.data.map(({ id, title, overview, poster_path }) => {
+          return (
+            <MovieItem
+              key={id}
+              id={id}
+              title={title}
+              overview={overview}
+              poster_path={poster_path}
+              showMoviePage={this.showMoviePage}
+            />
+          );
         })}
       </MovieListGrid>
     );
