@@ -3,25 +3,16 @@
 import React, { Component } from 'react';
 
 class MoviePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayMovie: ''
-    };
-  }
-
   componentDidMount() {
-    const { movieId } = this.props;
-    this.setState({
-      displayMovie: movieId
-    });
+    const { movieId, getMovie } = this.props;
+    getMovie(movieId);
   }
 
   render() {
-    const { displayMovie } = this.state;
+    const { movie } = this.props;
     return (
       <div className="movie-page">
-        <p>{displayMovie}</p>
+        <p>{movie.data ? movie.data.title : 'Loading...'}</p>
       </div>
     );
   }
