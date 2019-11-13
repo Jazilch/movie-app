@@ -24,11 +24,11 @@ describe('action creator test', () => {
   });
 
   it('should setup movies success action object', () => {
-    const result = {};
+    const result = { data: {} };
     const action = getMoviesSuccess(result);
     expect(action).toEqual({
       type: 'GET_MOVIES_SUCCESS',
-      payload: result
+      payload: {}
     });
   });
 });

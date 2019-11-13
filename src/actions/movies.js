@@ -3,13 +3,12 @@
 import { createAction } from 'redux-actions';
 import * as ActionTypes from './ActionTypes';
 
-export const getMoviesError = createAction(ActionTypes.GET_MOVIES_ERROR);
+export const getMoviesError = createAction(
+  ActionTypes.GET_MOVIES_ERROR,
+  error => error
+);
 export const getMoviesStart = createAction(ActionTypes.GET_MOVIES_START);
 export const getMoviesSuccess = createAction(
   ActionTypes.GET_MOVIES_SUCCESS,
-  result => result
+  ({ data }) => data
 );
-// export const getMoviesSuccess = createAction(
-//   ActionTypes.GET_MOVIES_SUCCESS,
-//   ({ data }) => data
-// );

@@ -7,10 +7,10 @@ export const getMovies = () => {
     dispatch(getMoviesStart());
 
     return fetchMovies().then(
-      result => dispatch(getMoviesSuccess(result.data)),
+      result => dispatch(getMoviesSuccess(result)),
       error => {
         dispatch(getMoviesError(error));
-        return dispatch(getMoviesError());
+        return dispatch(getMoviesError(error));
       }
     );
   };
