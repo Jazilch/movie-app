@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders component correctly 1`] = `
+<styled.div>
+  <p>
+    Created with
+     
+    <span
+      aria-label="heart"
+      role="img"
+    >
+      ❤️
+    </span>
+     
+    by James Zilch
+  </p>
+</styled.div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieItem component correctly renders movie item 1`] = `
+<styled.div>
+  <h1>
+    Joker
+  </h1>
+  <p>
+    Description of the Joker
+  </p>
+</styled.div>
+`;

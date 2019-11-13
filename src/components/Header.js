@@ -10,7 +10,7 @@ const HeaderWrapper = styled.div`
   color: #fff;
 `;
 
-const Logo = styled.div`
+const Logo = styled.span`
   color: red;
   font-weight: 700;
   font-size: 42px;

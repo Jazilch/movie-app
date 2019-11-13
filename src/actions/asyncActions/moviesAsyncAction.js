@@ -10,7 +10,7 @@ export const getMovies = () => {
       result => dispatch(getMoviesSuccess(result)),
       error => {
         dispatch(getMoviesError(error));
-        return dispatch(getMoviesError());
+        return dispatch(getMoviesError(error));
       }
     );
   };

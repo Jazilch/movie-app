@@ -13,7 +13,7 @@ const MovieListGrid = styled.div`
   grid-row-gap: 10px;
 `;
 
-const LoadingGrid = styled.div`
+const LoadingGrid = styled.section`
   display: flex;
   height: 100%;
   justify-content: center;

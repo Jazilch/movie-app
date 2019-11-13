@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieList component renders component correctly 1`] = `
+<styled.div>
+  <MovieItem
+    key="1"
+    overview="Description of the Joker"
+    title="Joker"
+  />
+  <MovieItem
+    key="2"
+    overview="I am Arnold"
+    title="Terminator"
+  />
+  <MovieItem
+    key="3"
+    overview="Battle in WW2"
+    title="Midway"
+  />
+</styled.div>
+`;
