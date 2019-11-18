@@ -6,6 +6,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import MovieList from '../../components/MovieList';
+import DefaultLoader from '../../components/DefaultLoader';
 
 const movies = {
   data: [
@@ -47,7 +48,7 @@ describe('MovieList component', () => {
     movielist = shallow(<MovieList movies={moviesNoData} />, {
       disableLifecycleMethods: true
     });
-    expect(movielist.find('Loader').exists()).toEqual(true);
+    expect(movielist.find(DefaultLoader).exists()).toEqual(true);
   });
 
   it('shows the movie grid', () => {

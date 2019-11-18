@@ -8,6 +8,7 @@ import Footer from './Footer';
 const LayoutWrapper = styled.section`
   display: grid;
   grid-gap: 10px;
+  align-items: center;
   height: 100%;
   grid-template-columns: 1fr;
   grid-template-areas:

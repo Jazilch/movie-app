@@ -4,27 +4,27 @@
 
 import expect from 'expect';
 import {
-  GET_MOVIES_ERROR,
-  GET_MOVIES_START,
-  GET_MOVIES_SUCCESS
+  GET_MOVIE_ERROR,
+  GET_MOVIE_START,
+  GET_MOVIE_SUCCESS
 } from '../../actions/ActionTypes';
-import { getMoviesMock } from '../mocks/getMoviesMock';
-import reducer from '../../reducers/movies';
+import { getMovieMock } from '../mocks/getMovieMock';
+import reducer from '../../reducers/movie';
 import { AsyncDataDefaultState, AsyncDataStateKeys } from '../../Constants';
 
 const { DATA, ERROR, LOADING } = AsyncDataStateKeys;
 
-describe('movies reducer', () => {
+describe('movie reducer', () => {
   it('should return initial state', () => {
     expect(reducer(undefined, AsyncDataDefaultState)).toEqual(
       AsyncDataDefaultState
     );
   });
 
-  it('should handle GET_MOVIES_ERROR', () => {
+  it('should handle GET_MOVIE_ERROR', () => {
     const error = { success: false };
     const errorAction = {
-      type: GET_MOVIES_ERROR,
+      type: GET_MOVIE_ERROR,
       payload: error
     };
     expect(reducer(AsyncDataDefaultState, errorAction)).toEqual({
@@ -34,9 +34,9 @@ describe('movies reducer', () => {
     });
   });
 
-  it('should handle GET_MOVIES_START', () => {
+  it('should handle GET_MOVIE_START', () => {
     const startAction = {
-      type: GET_MOVIES_START
+      type: GET_MOVIE_START
     };
     expect(reducer(AsyncDataDefaultState, startAction)).toEqual({
       [DATA]: null,
@@ -44,13 +44,13 @@ describe('movies reducer', () => {
       [LOADING]: true
     });
   });
-  it('should handle GET_MOVIES_SUCCESS', () => {
+  it('should handle GET_MOVIE_SUCCESS', () => {
     const successAction = {
-      type: GET_MOVIES_SUCCESS,
-      payload: getMoviesMock.results
+      type: GET_MOVIE_SUCCESS,
+      payload: getMovieMock.results
     };
     expect(reducer(AsyncDataDefaultState, successAction)).toEqual({
-      [DATA]: getMoviesMock.data,
+      [DATA]: getMovieMock.data,
       [ERROR]: false,
       [LOADING]: false
     });

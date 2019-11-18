@@ -9,11 +9,19 @@ import MovieItem from '../../components/MovieItem';
 
 describe('MovieItem component', () => {
   let movieitem;
+  let showMoviePageMock;
   const title = 'Joker';
   const overview = 'Description of the Joker';
 
   beforeEach(() => {
-    movieitem = shallow(<MovieItem title={title} overview={overview} />);
+    showMoviePageMock = jest.fn();
+    movieitem = shallow(
+      <MovieItem
+        title={title}
+        overview={overview}
+        showMoviePage={showMoviePageMock}
+      />
+    );
   });
 
   it('correctly renders movie item', () => {

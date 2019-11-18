@@ -4,28 +4,20 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { css } from '@emotion/core';
-import ScaleLoader from 'react-spinners/ScaleLoader';
 import MovieItem from './MovieItem';
+import DefaultLoader from './DefaultLoader';
 
 const MovieListGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-`;
-
-const LoadingGrid = styled.section`
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 class MovieList extends Component {
@@ -41,12 +33,7 @@ class MovieList extends Component {
 
   render() {
     const { movies } = this.props;
-    if (!movies.data)
-      return (
-        <LoadingGrid>
-          <ScaleLoader css={override} sizeUnit="px" size={150} color="red" />
-        </LoadingGrid>
-      );
+    if (!movies.data) return <DefaultLoader />;
     return (
       <MovieListGrid>
         {movies.data.map(({ id, title, overview, poster_path }) => {
