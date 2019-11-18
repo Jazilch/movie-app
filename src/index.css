@@ -21,3 +21,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* fixes alignment issue with progress bar when using text-align: center on parent */
+.circle_reactGradientProgress__1iWe_ {
+  text-align: left;
+}
