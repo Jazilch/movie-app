@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieRating component renders the MovieRating correctly 1`] = `
+<CircleProgress
+  fill="transparent"
+  fontColor="inherit"
+  fontFamily="inherit"
+  fontSize="14"
+  percentage={NaN}
+  primaryColor={
+    Array [
+      "#00BBFF",
+      "#92d7f1",
+    ]
+  }
+  secondaryColor="transparent"
+  strokeWidth={5}
+  width={70}
+/>
+`;

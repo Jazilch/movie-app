@@ -9164,6 +9164,11 @@ react-error-overlay@^6.0.3:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.3.tgz#c378c4b0a21e88b2e159a3e62b2f531fd63bf60d"
   integrity sha512-bOUvMWFQVk5oz8Ded9Xb7WVdEi3QGLC8tH7HmYP0Fdp4Bn3qw0tRFmr5TW6mvahzvmrK4a6bqWGfCevBflP+Xw==
 
+react-gradient-progress@^1.0.2:
+  version "1.0.2"
+  resolved "https://npm.hubteam.com/npm-nexus/repository/npm-all/react-gradient-progress/-/react-gradient-progress-1.0.2.tgz#5ee2ae8d785244eb5a546f36d45a427f568eec41"
+  integrity sha512-wAwqqAxF6fiv4Do7hByTLprqprjxhjWnps9dThLkvfZoMDoqi+M5VGHEcBbi28T29xA0Xg/U8XpmFPXq/GtIGw==
+
 react-is@^16.10.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6, react-is@^16.9.0:
   version "16.11.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"
