@@ -2,6 +2,10 @@
 
 exports[`MovieItem component correctly renders movie item 1`] = `
 <styled.div>
+  <img
+    alt="movie"
+    src="http://image.tmdb.org/t/p/w342undefined"
+  />
   <h1>
     Joker
   </h1>

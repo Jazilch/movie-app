@@ -1,11 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Moviepage component renders the moviepage correctly 1`] = `
-<div
-  className="movie-page"
+<styled.div
+  backdropFullPath="https://image.tmdb.org/t/p/w1400_and_h450_faceundefined"
 >
-  <p>
-    Im the movie page
-  </p>
-</div>
+  <styled.div>
+    <img
+      alt="movie"
+      src="http://image.tmdb.org/t/p/w342undefined"
+    />
+  </styled.div>
+  <styled.div>
+    <styled.span>
+      <styled.h1 />
+      <styled.span>
+        (undefined)
+      </styled.span>
+    </styled.span>
+    <styled.span />
+    <MovieRating />
+    <p />
+  </styled.div>
+</styled.div>
 `;
