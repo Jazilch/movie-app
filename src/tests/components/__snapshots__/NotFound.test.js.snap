@@ -1,3 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the not found page correctly 1`] = `"page not found"`;
+exports[`renders the not found page correctly 1`] = `
+<styled.div>
+  <img
+    alt="not-found"
+    src="https://cdn2.hubspot.net/hubfs/2676636/Awesome%20Logs%20Files/Hanks-640x359.jpg"
+    width="500"
+  />
+  <styled.div>
+    <styled.h2>
+      Awww... Dont cry.
+    </styled.h2>
+    <br />
+    <styled.span>
+      Its only a 404 Error
+    </styled.span>
+  </styled.div>
+</styled.div>
+`;

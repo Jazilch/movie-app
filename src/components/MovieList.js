@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import MovieItem from './MovieItem';
 import DefaultLoader from './DefaultLoader';
+import MovieListToolbar from './MovieListToolbar';
 
 const MovieListGrid = styled.div`
   display: grid;
@@ -31,24 +32,39 @@ class MovieList extends Component {
     history.push(`/movies/${id}`);
   };
 
+  filterBySearch = movies => {
+    const { searchTerm } = this.props;
+    return movies.title
+      .toLowerCase()
+      .includes(String(searchTerm).toLowerCase());
+  };
+
+  getFilteredMedia = movies => {
+    return movies.filter(this.filterBySearch);
+  };
+
   render() {
     const { movies } = this.props;
     if (!movies.data) return <DefaultLoader />;
+    const filteredMovies = this.getFilteredMedia(movies.data);
     return (
-      <MovieListGrid>
-        {movies.data.map(({ id, title, overview, poster_path }) => {
-          return (
-            <MovieItem
-              key={id}
-              id={id}
-              title={title}
-              overview={overview}
-              poster_path={poster_path}
-              showMoviePage={this.showMoviePage}
-            />
-          );
-        })}
-      </MovieListGrid>
+      <>
+        <MovieListToolbar />
+        <MovieListGrid>
+          {filteredMovies.map(({ id, title, overview, poster_path }) => {
+            return (
+              <MovieItem
+                key={id}
+                id={id}
+                title={title}
+                overview={overview}
+                poster_path={poster_path}
+                showMoviePage={this.showMoviePage}
+              />
+            );
+          })}
+        </MovieListGrid>
+      </>
     );
   }
 }

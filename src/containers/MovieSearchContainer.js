@@ -1,19 +1,18 @@
 'use es6';
 
 import { connect } from 'react-redux';
-import MovieList from '../components/MovieList';
-import { getMovies } from '../actions/asyncActions/moviesAsyncAction';
+import MovieSearch from '../components/MovieSearch';
+import { setSearch } from '../actions/setSearch';
 
 const mapStateToProps = state => ({
-  movies: state.movies,
   searchTerm: state.searchTerm
 });
 
 const mapDispatchToProps = {
-  getMovies
+  setSearch
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MovieList);
+)(MovieSearch);
