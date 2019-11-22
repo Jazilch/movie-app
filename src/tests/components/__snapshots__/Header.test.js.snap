@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component renders header correctly 1`] = `
-<styled.div>
-  <styled.span>
+<Header__HeaderWrapper>
+  <Header__Logo>
     Movie App
-  </styled.span>
-  <styled.nav>
-    <styled.a
+  </Header__Logo>
+  <Header__Nav>
+    <Header__NavItem
       href=""
     >
       Movies
-    </styled.a>
-    <styled.a
+    </Header__NavItem>
+    <Header__NavItem
       href=""
     >
       Shows
-    </styled.a>
-  </styled.nav>
-</styled.div>
+    </Header__NavItem>
+  </Header__Nav>
+</Header__HeaderWrapper>
 `;

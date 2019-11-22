@@ -1,7 +1,7 @@
 'use es6';
 
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const FooterWrapper = styled.div`
   display: flex;

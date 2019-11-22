@@ -1,8 +1,204 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieList component renders component correctly 1`] = `
-<Fragment>
-  <MovieListToolbar />
-  <styled.div />
-</Fragment>
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MovieList
+    getMovies={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    movies={
+      Object {
+        "data": Array [
+          Object {
+            "id": 1,
+            "overview": "Description of the Joker",
+            "title": "Joker",
+          },
+          Object {
+            "id": 2,
+            "overview": "I am Arnold",
+            "title": "Terminator",
+          },
+          Object {
+            "id": 3,
+            "overview": "Battle in WW2",
+            "title": "Midway",
+          },
+        ],
+      }
+    }
+  >
+    <MovieListToolbar>
+      <MovieListToolbar__MovieListToolbarWrapper>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "MovieListToolbar__MovieListToolbarWrapper-sc-9yjwu5-0",
+                "isStatic": false,
+                "lastClassName": "kpVKrK",
+                "rules": Array [
+                  "display:flex;justify-content:space-between;align-items:center;height:80px;padding:0 1rem;margin-bottom:1rem;background-color:#494949;",
+                ],
+              },
+              "displayName": "MovieListToolbar__MovieListToolbarWrapper",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "MovieListToolbar__MovieListToolbarWrapper-sc-9yjwu5-0",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="MovieListToolbar__MovieListToolbarWrapper-sc-9yjwu5-0 kpVKrK"
+          >
+            <MovieGenreFilter>
+              <form
+                method="post"
+              >
+                <select
+                  name="Movie Genre Filter"
+                >
+                  <option
+                    value="horror"
+                  >
+                    Horror
+                  </option>
+                  <option
+                    value="comedy"
+                  >
+                    Comedy
+                  </option>
+                  <option
+                    value="action"
+                  >
+                    Action
+                  </option>
+                  <option
+                    value="thriller"
+                  >
+                    Thriller
+                  </option>
+                </select>
+              </form>
+            </MovieGenreFilter>
+            <Connect(MovieSearch)>
+              <MovieSearch
+                setSearch={[Function]}
+              >
+                <div>
+                  <form
+                    className="form"
+                  >
+                    <MovieSearch__SearchInput
+                      className="input"
+                      id="addInput"
+                      onChange={[Function]}
+                      placeholder="Search movies..."
+                    >
+                      <StyledComponent
+                        className="input"
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "MovieSearch__SearchInput-zvqzng-0",
+                              "isStatic": false,
+                              "lastClassName": "jwiRuT",
+                              "rules": Array [
+                                "line-height:2rem;font-size:18px;padding:0 5px;:focus{outline:red auto 2px;}",
+                              ],
+                            },
+                            "displayName": "MovieSearch__SearchInput",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "MovieSearch__SearchInput-zvqzng-0",
+                            "target": "input",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        id="addInput"
+                        onChange={[Function]}
+                        placeholder="Search movies..."
+                      >
+                        <input
+                          className="MovieSearch__SearchInput-zvqzng-0 jwiRuT input"
+                          id="addInput"
+                          onChange={[Function]}
+                          placeholder="Search movies..."
+                        />
+                      </StyledComponent>
+                    </MovieSearch__SearchInput>
+                  </form>
+                </div>
+              </MovieSearch>
+            </Connect(MovieSearch)>
+          </div>
+        </StyledComponent>
+      </MovieListToolbar__MovieListToolbarWrapper>
+    </MovieListToolbar>
+    <MovieList__MovieListGrid>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "MovieList__MovieListGrid-zq71c2-0",
+              "isStatic": false,
+              "lastClassName": "bzibPf",
+              "rules": Array [
+                "display:grid;grid-template-columns:repeat(3,1fr);grid-column-gap:10px;grid-row-gap:10px;@media (max-width:950px){grid-template-columns:repeat(2,1fr);}@media (max-width:767px){grid-template-columns:repeat(1,1fr);}",
+              ],
+            },
+            "displayName": "MovieList__MovieListGrid",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "MovieList__MovieListGrid-zq71c2-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="MovieList__MovieListGrid-zq71c2-0 bzibPf"
+        />
+      </StyledComponent>
+    </MovieList__MovieListGrid>
+  </MovieList>
+</Provider>
 `;

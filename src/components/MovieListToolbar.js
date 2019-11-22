@@ -1,7 +1,7 @@
 'use es6';
 
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import MovieSearchContainer from '../containers/MovieSearchContainer';
 import MovieGenreFilter from './MovieGenreFilter';
 

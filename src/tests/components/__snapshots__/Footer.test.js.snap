@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component renders component correctly 1`] = `
-<styled.div>
+<Footer__FooterWrapper>
   <p>
     Created with
      
@@ -14,5 +14,5 @@ exports[`Footer component renders component correctly 1`] = `
      
     by James Zilch
   </p>
-</styled.div>
+</Footer__FooterWrapper>
 `;

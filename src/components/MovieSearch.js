@@ -1,7 +1,7 @@
 'use es6';
 
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const SearchInput = styled.input`
   line-height: 2rem;

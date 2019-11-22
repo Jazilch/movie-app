@@ -3,7 +3,7 @@
 'use es6';
 
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import MovieItem from './MovieItem';
 import DefaultLoader from './DefaultLoader';
 import MovieListToolbar from './MovieListToolbar';

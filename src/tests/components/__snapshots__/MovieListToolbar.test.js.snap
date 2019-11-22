@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieListToolbar Component renders the component correctly 1`] = `
+<MovieListToolbar__MovieListToolbarWrapper>
+  <MovieGenreFilter />
+  <Connect(MovieSearch) />
+</MovieListToolbar__MovieListToolbarWrapper>
+`;
