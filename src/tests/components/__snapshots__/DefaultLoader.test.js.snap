@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Loader component renders the component correctly 1`] = `
+<styled.section>
+  <Loader
+    color="red"
+    css={
+      Object {
+        "map": undefined,
+        "name": "f37jqc",
+        "next": undefined,
+        "styles": "
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+",
+        "toString": [Function],
+      }
+    }
+    height={35}
+    heightUnit="px"
+    loading={true}
+    margin="2px"
+    radius={2}
+    radiusUnit="px"
+    size={150}
+    sizeUnit="px"
+    width={4}
+    widthUnit="px"
+  />
+</styled.section>
+`;

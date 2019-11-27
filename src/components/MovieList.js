@@ -36,7 +36,7 @@ class MovieList extends Component {
     const { searchTerm } = this.props;
     return movies.title
       .toLowerCase()
-      .includes(String(searchTerm).toLowerCase());
+      .includes(searchTerm.toString().toLowerCase());
   };
 
   getFilteredMedia = movies => {

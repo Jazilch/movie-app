@@ -1,17 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-shadow */
 /* eslint-disable no-undef */
 
 'use es6';
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
 import MovieList from '../../components/MovieList';
-import DefaultLoader from '../../components/DefaultLoader';
-import MovieItem from '../../components/MovieItem';
-
-const mockStore = configureStore([]);
 
 const movies = {
   data: [
@@ -27,14 +23,12 @@ describe('MovieList component', () => {
   let store;
   beforeEach(() => {
     getMoviesMock = jest.fn();
-    store = mockStore({
-      movies
-    });
-    movielist = shallow(
-      <Provider store={store}>
-        <MovieList movies={movies} getMovies={getMoviesMock} />
-      </Provider>
-    );
+    store = {
+      movies,
+      searchTerm: '',
+      getMovies: getMoviesMock
+    };
+    movielist = shallow(<MovieList {...store} />);
   });
 
   it('renders component correctly', () => {
@@ -46,53 +40,40 @@ describe('MovieList component', () => {
       MovieList.prototype,
       'componentDidMount'
     );
-    shallow(<MovieList movies={movies} getMovies={getMoviesMock} />);
+    shallow(<MovieList {...store} />);
     expect(componentDidMountSpy).toHaveBeenCalled();
     componentDidMountSpy.mockReset();
     componentDidMountSpy.mockRestore();
   });
 
   it('renders a loading indicator if no data', () => {
-    const moviesNoData = {
-      data: null
-    };
-    movielist = shallow(<MovieList movies={moviesNoData} />, {
-      disableLifecycleMethods: true
-    });
-    expect(movielist.find(DefaultLoader).exists()).toEqual(true);
+    movielist.setProps({ movies: { data: null } });
+    expect(movielist.find('DefaultLoader').exists()).toEqual(true);
   });
 
   it('shows the correct number of items', () => {
-    // expect(movielist.find('MovieList__MovieListGrid').children().length).toBe(
-    //   3
-    // );
+    expect(movielist.find('MovieList__MovieListGrid').children().length).toBe(
+      3
+    );
   });
 
   it('can search movies via a search term', () => {
-    const movies = {
-      data: [{ title: 'Terminator' }, { title: 'Joker' }, { title: 'Frozen' }]
-    };
-    const searchTerm = 'ter';
-
-    const filterBySearch = movies => {
-      return movies.title
-        .toLowerCase()
-        .includes(String(searchTerm).toLowerCase());
-    };
-
-    const getFilteredMedia = movies => {
-      return movies.data.filter(filterBySearch);
-    };
-
-    const expectedSearchResult = [{ title: 'Terminator' }];
-    const filteredMovies = getFilteredMedia(movies);
-    const filteredResults = { data: [...filteredMovies] };
-    const filteredMovieComponent = shallow(
-      <MovieList movies={filteredResults} />,
-      { disableLifecycleMethods: true }
-    );
-    expect(filteredMovieComponent).find('MovieList__MovieListGrid').length;
+    movielist.setProps({ searchTerm: 'Term' });
+    expect(
+      movielist
+        .find('MovieList__MovieListGrid')
+        .children()
+        .prop('title')
+    ).toEqual('Terminator');
   });
 
-  it('is case insensitive', () => {});
+  it('is case insensitive', () => {
+    movielist.setProps({ searchTerm: 'term' });
+    expect(
+      movielist
+        .find('MovieList__MovieListGrid')
+        .children()
+        .prop('title')
+    ).toEqual('Terminator');
+  });
 });
