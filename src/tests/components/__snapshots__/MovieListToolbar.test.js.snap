@@ -2,7 +2,7 @@
 
 exports[`MovieListToolbar Component renders the component correctly 1`] = `
 <MovieListToolbar__MovieListToolbarWrapper>
-  <MovieGenreFilter />
+  <Connect(MovieGenreFilter) />
   <Connect(MovieSearch) />
 </MovieListToolbar__MovieListToolbarWrapper>
 `;

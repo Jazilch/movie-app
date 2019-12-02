@@ -10,3 +10,4 @@ export const GET_MOVIES_START = 'GET_MOVIES_START';
 export const GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS';
 
 export const SET_SEARCH = 'SET_SEARCH';
+export const SET_FILTER = 'SET_FILTER';

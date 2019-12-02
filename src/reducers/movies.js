@@ -1,5 +1,6 @@
 import * as ActionTypes from '../actions/ActionTypes';
 import { AsyncDataDefaultState, AsyncDataStateKeys } from '../Constants';
+import { getGenreNames } from '../utils/getGenreNames';
 
 const { DATA, ERROR, LOADING } = AsyncDataStateKeys;
 
@@ -19,7 +20,10 @@ export default function(state = AsyncDataDefaultState, action) {
       };
     case ActionTypes.GET_MOVIES_SUCCESS:
       return {
-        [DATA]: action.payload.results,
+        [DATA]: action.payload.results.map(result => ({
+          ...result,
+          genres: getGenreNames(result.genre_ids)
+        })),
         [ERROR]: false,
         [LOADING]: false
       };

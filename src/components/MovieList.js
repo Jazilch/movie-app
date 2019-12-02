@@ -7,6 +7,7 @@ import styled from 'styled-components/macro';
 import MovieItem from './MovieItem';
 import DefaultLoader from './DefaultLoader';
 import MovieListToolbar from './MovieListToolbar';
+import SearchEmptyState from './SearchEmptyState';
 
 const MovieListGrid = styled.div`
   display: grid;
@@ -39,8 +40,16 @@ class MovieList extends Component {
       .includes(searchTerm.toString().toLowerCase());
   };
 
+  filterByGenre = movies => {
+    const { filterTerm } = this.props;
+    if (filterTerm === 'All') {
+      return true;
+    }
+    return movies.genres.includes(filterTerm);
+  };
+
   getFilteredMedia = movies => {
-    return movies.filter(this.filterBySearch);
+    return movies.filter(this.filterBySearch).filter(this.filterByGenre);
   };
 
   render() {
@@ -50,19 +59,23 @@ class MovieList extends Component {
     return (
       <>
         <MovieListToolbar />
+        {!filteredMovies.length && <SearchEmptyState />}
         <MovieListGrid>
-          {filteredMovies.map(({ id, title, overview, poster_path }) => {
-            return (
-              <MovieItem
-                key={id}
-                id={id}
-                title={title}
-                overview={overview}
-                poster_path={poster_path}
-                showMoviePage={this.showMoviePage}
-              />
-            );
-          })}
+          {filteredMovies.map(
+            ({ id, title, overview, poster_path, genres }) => {
+              return (
+                <MovieItem
+                  key={id}
+                  id={id}
+                  title={title}
+                  overview={overview}
+                  poster_path={poster_path}
+                  genres={genres}
+                  showMoviePage={this.showMoviePage}
+                />
+              );
+            }
+          )}
         </MovieListGrid>
       </>
     );

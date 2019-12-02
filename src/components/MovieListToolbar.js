@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import MovieSearchContainer from '../containers/MovieSearchContainer';
-import MovieGenreFilter from './MovieGenreFilter';
+import MovieFilterContainer from '../containers/MovieFilterContainer';
 
 const MovieListToolbarWrapper = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const MovieListToolbarWrapper = styled.div`
 const MovieListToolbar = () => {
   return (
     <MovieListToolbarWrapper>
-      <MovieGenreFilter />
+      <MovieFilterContainer />
       <MovieSearchContainer />
     </MovieListToolbarWrapper>
   );

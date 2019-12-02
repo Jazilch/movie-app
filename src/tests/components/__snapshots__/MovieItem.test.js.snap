@@ -1,16 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieItem component correctly renders movie item 1`] = `
-<MovieItem__MovieItemWrapper>
-  <img
-    alt="movie"
-    src="http://image.tmdb.org/t/p/w342undefined"
-  />
-  <h1>
-    Joker
-  </h1>
-  <p>
-    Description of the Joker
-  </p>
-</MovieItem__MovieItemWrapper>
-`;
+exports[`MovieItem component correctly renders movie item 1`] = `undefined`;
