@@ -8,10 +8,8 @@ import toJson from 'enzyme-to-json';
 import MovieListToolbar from '../../components/MovieListToolbar';
 
 describe('MovieListToolbar Component', () => {
-  let movielisttoolbar;
-
   it('renders the component correctly', () => {
-    movielisttoolbar = shallow(<MovieListToolbar />);
+    const movielisttoolbar = shallow(<MovieListToolbar />);
     expect(toJson(movielisttoolbar)).toMatchSnapshot();
   });
 });

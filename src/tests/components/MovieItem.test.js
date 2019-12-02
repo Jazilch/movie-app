@@ -12,6 +12,7 @@ describe('MovieItem component', () => {
   let showMoviePageMock;
   const title = 'Joker';
   const overview = 'Description of the Joker';
+  const genres = ['Crime', 'Drama', 'Thriller'];
 
   beforeEach(() => {
     showMoviePageMock = jest.fn();
@@ -19,6 +20,7 @@ describe('MovieItem component', () => {
       <MovieItem
         title={title}
         overview={overview}
+        genres={genres}
         showMoviePage={showMoviePageMock}
       />
     );
@@ -31,5 +33,6 @@ describe('MovieItem component', () => {
   it('renders the correct text', () => {
     expect(movieitem.find('h1').text()).toEqual('Joker');
     expect(movieitem.find('p').text()).toEqual('Description of the Joker');
+    expect(movieitem.find('span').text()).toEqual('Crime, Drama, Thriller');
   });
 });

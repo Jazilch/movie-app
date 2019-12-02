@@ -8,7 +8,7 @@ import {
   GET_MOVIES_START,
   GET_MOVIES_SUCCESS
 } from '../../actions/ActionTypes';
-import { getMoviesMock } from '../mocks/getMoviesMock';
+import { getMoviesMock, getMoviesExpectedMock } from '../mocks/getMoviesMock';
 import reducer from '../../reducers/movies';
 import { AsyncDataDefaultState, AsyncDataStateKeys } from '../../Constants';
 
@@ -47,10 +47,10 @@ describe('movies reducer', () => {
   it('should handle GET_MOVIES_SUCCESS', () => {
     const successAction = {
       type: GET_MOVIES_SUCCESS,
-      payload: getMoviesMock.results
+      payload: getMoviesMock
     };
     expect(reducer(AsyncDataDefaultState, successAction)).toEqual({
-      [DATA]: getMoviesMock.data,
+      [DATA]: getMoviesExpectedMock.results,
       [ERROR]: false,
       [LOADING]: false
     });

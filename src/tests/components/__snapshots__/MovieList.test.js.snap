@@ -1,3 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieList component renders component correctly 1`] = `undefined`;
+exports[`MovieList component renders component correctly 1`] = `
+<Fragment>
+  <MovieListToolbar />
+  <MovieList__MovieListGrid>
+    <MovieItem
+      genres={
+        Array [
+          "Crime",
+          "Drama",
+          "Thriller",
+        ]
+      }
+      id={1}
+      key="1"
+      overview="Description of the Joker"
+      showMoviePage={[Function]}
+      title="Joker"
+    />
+    <MovieItem
+      genres={
+        Array [
+          "Action",
+        ]
+      }
+      id={2}
+      key="2"
+      overview="I am Arnold"
+      showMoviePage={[Function]}
+      title="Terminator"
+    />
+    <MovieItem
+      genres={
+        Array [
+          "Comedy",
+          "Horror",
+          "Mystery",
+          "Thriller",
+        ]
+      }
+      id={3}
+      key="3"
+      overview="A bride's wedding night "
+      showMoviePage={[Function]}
+      title="Ready or Not"
+    />
+  </MovieList__MovieListGrid>
+</Fragment>
+`;

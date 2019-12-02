@@ -11,9 +11,19 @@ import MovieList from '../../components/MovieList';
 
 const movies = {
   data: [
-    { id: 1, title: 'Joker', overview: 'Description of the Joker' },
-    { id: 2, title: 'Terminator', overview: 'I am Arnold' },
-    { id: 3, title: 'Midway', overview: 'Battle in WW2' }
+    {
+      id: 1,
+      title: 'Joker',
+      overview: 'Description of the Joker',
+      genres: ['Crime', 'Drama', 'Thriller']
+    },
+    { id: 2, title: 'Terminator', overview: 'I am Arnold', genres: ['Action'] },
+    {
+      id: 3,
+      title: 'Ready or Not',
+      overview: "A bride's wedding night ",
+      genres: ['Comedy', 'Horror', 'Mystery', 'Thriller']
+    }
   ]
 };
 
@@ -26,6 +36,7 @@ describe('MovieList component', () => {
     store = {
       movies,
       searchTerm: '',
+      filterTerm: 'All',
       getMovies: getMoviesMock
     };
     movielist = shallow(<MovieList {...store} />);
@@ -75,5 +86,20 @@ describe('MovieList component', () => {
         .children()
         .prop('title')
     ).toEqual('Terminator');
+  });
+
+  it('can filter results', () => {
+    movielist.setProps({ filterTerm: 'Horror' });
+    expect(
+      movielist
+        .find('MovieList__MovieListGrid')
+        .children()
+        .prop('title')
+    ).toEqual('Ready or Not');
+  });
+
+  it('shows empty state if no results', () => {
+    movielist.setProps({ filterTerm: 'Western' });
+    expect(movielist.find('SearchEmptyState').exists()).toEqual(true);
   });
 });
