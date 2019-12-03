@@ -8,6 +8,7 @@ import MovieItem from './MovieItem';
 import DefaultLoader from './DefaultLoader';
 import MovieListToolbar from './MovieListToolbar';
 import SearchEmptyState from './SearchEmptyState';
+import { AllLinks } from '../Constants';
 
 const MovieListGrid = styled.div`
   display: grid;
@@ -42,7 +43,7 @@ class MovieList extends Component {
 
   filterByGenre = movies => {
     const { filterTerm } = this.props;
-    if (filterTerm === 'All') {
+    if (AllLinks.includes(filterTerm)) {
       return true;
     }
     return movies.genres.includes(filterTerm);

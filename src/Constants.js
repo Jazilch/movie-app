@@ -11,3 +11,5 @@ export const AsyncDataDefaultState = {
   [AsyncDataStateKeys.ERROR]: false,
   [AsyncDataStateKeys.LOADING]: false
 };
+
+export const AllLinks = ['All', 'all'];
