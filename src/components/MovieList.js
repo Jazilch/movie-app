@@ -1,3 +1,4 @@
+/* eslint-disable react/state-in-constructor */
 /* eslint-disable camelcase */
 
 'use es6';
@@ -8,11 +9,12 @@ import MovieItem from './MovieItem';
 import DefaultLoader from './DefaultLoader';
 import MovieListToolbar from './MovieListToolbar';
 import SearchEmptyState from './SearchEmptyState';
-import { AllLinks } from '../Constants';
+import PaginationContainer from '../containers/PaginationContainer';
+import { AllLinks, pageSize } from '../Constants';
 
 const MovieListGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   @media (max-width: 950px) {
@@ -54,16 +56,20 @@ class MovieList extends Component {
   };
 
   render() {
-    const { movies } = this.props;
+    const { movies, page } = this.props;
     if (!movies.data) return <DefaultLoader />;
     const filteredMovies = this.getFilteredMedia(movies.data);
+    const dataCount = filteredMovies.length;
+    const pageCount = Math.ceil(dataCount / pageSize);
+    const startIndex = (page - 1) * pageSize;
     return (
       <>
         <MovieListToolbar />
         {!filteredMovies.length && <SearchEmptyState />}
         <MovieListGrid>
-          {filteredMovies.map(
-            ({ id, title, overview, poster_path, genres }) => {
+          {filteredMovies
+            .slice(startIndex, startIndex + pageSize)
+            .map(({ id, title, overview, poster_path, genres }) => {
               return (
                 <MovieItem
                   key={id}
@@ -75,9 +81,9 @@ class MovieList extends Component {
                   showMoviePage={this.showMoviePage}
                 />
               );
-            }
-          )}
+            })}
         </MovieListGrid>
+        <PaginationContainer pageCount={pageCount} />
       </>
     );
   }

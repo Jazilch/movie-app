@@ -2,7 +2,7 @@
 
 exports[`MovieItem component correctly renders movie item 1`] = `
 <MovieItem__MovieItemWrapper>
-  <img
+  <MovieItem__MovieItemImage
     alt="movie"
     src="http://image.tmdb.org/t/p/w342undefined"
   />

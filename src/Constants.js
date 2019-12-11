@@ -1,5 +1,7 @@
 'use es6';
 
+export const AllLinks = ['All', 'all'];
+
 export const AsyncDataStateKeys = {
   DATA: 'data',
   ERROR: 'error',
@@ -12,4 +14,4 @@ export const AsyncDataDefaultState = {
   [AsyncDataStateKeys.LOADING]: false
 };
 
-export const AllLinks = ['All', 'all'];
+export const pageSize = 9;

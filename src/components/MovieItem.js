@@ -16,6 +16,10 @@ const MovieItemWrapper = styled.div`
   }
 `;
 
+const MovieItemImage = styled.img`
+  width: 100%;
+`;
+
 const MovieItem = ({
   id,
   title,
@@ -27,7 +31,7 @@ const MovieItem = ({
   const imageURL = `http://image.tmdb.org/t/p/w342${poster_path}`;
   return (
     <MovieItemWrapper onClick={showMoviePage(id)}>
-      <img src={imageURL} alt="movie" />
+      <MovieItemImage src={imageURL} alt="movie" />
       <h1>{title}</h1>
       <p>{overview}</p>
       <span>{genres.join(', ')}</span>
