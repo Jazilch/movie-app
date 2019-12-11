@@ -21,10 +21,16 @@ const LayoutWrapper = styled.section`
   margin: 0 auto;
 `;
 
+const MainWrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
 const Layout = ({ children }) => (
   <LayoutWrapper>
     <Header />
-    <main>{children}</main>
+    <MainWrapper>{children}</MainWrapper>
     <Footer />
   </LayoutWrapper>
 );
